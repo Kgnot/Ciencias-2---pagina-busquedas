@@ -9,6 +9,7 @@
   gap: 1em;
   padding: 1em; /* Posiblemente para cambiar*/
   background-color: var(--card-bg);
+  min-height: 30em;
 }
 
 .container-items-modify-search {
@@ -34,6 +35,11 @@
 
 .visualizer-wrapper {
   grid-area: list;
+  max-width: 100%;
+  img{
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 
