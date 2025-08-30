@@ -1,0 +1,30 @@
+<section class="home-page">
+  <app-title-page
+    title="Ciencias de la computacion 2"
+    description="Explora los fundamentos y tecnicas de recuperacion de informacion como los tipos de busquedas"
+  />
+  <!-- Aqui ira un buscador-->
+  <app-input-search
+
+  />
+  <!-- Apartado de las cards-->
+  <app-list-principal-cards>
+    <app-principal-cards
+      title="Búsquedas Internas"
+      description="Indexación, modelos de recuperación y evaluación de sistemas en conjuntos de datos locales"
+      link_page_to="/internal-search"
+      icon="search"/>
+
+    <app-principal-cards
+      title="Búsquedas Externas"
+      description="Memoria auxiliar secundaria"
+      link_page_to="/external-search"
+      icon="storage"/>
+
+    <app-principal-cards
+      title="Evaluación"
+      description="Métricas y comparaciones de rendimiento"
+      link_page_to="/evaluation"
+      icon="bar_chart"/>
+  </app-list-principal-cards>
+</section>

@@ -1,0 +1,14 @@
+<div class="param-input">
+  <label class="form-label">{{ label }}</label>
+  <input
+    type="number"
+    class="form-input"
+    [value]="value ?? ''"
+    (input)="onInput($event)"/>
+
+  <button class="btn-action" (click)="onClick()">
+    {{ buttonText }}
+  </button>
+
+  <ng-container></ng-container>
+</div>

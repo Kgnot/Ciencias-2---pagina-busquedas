@@ -1,0 +1,15 @@
+.h1-title-page {
+  font-size: 3.5em;
+  text-align: center;
+
+}
+
+#home-p {
+  font-size: var(--font-size-secondary);
+  color: var(--text-secondary)
+
+}
+
+.h1-title-page, #home-p {
+  text-align: center;
+}

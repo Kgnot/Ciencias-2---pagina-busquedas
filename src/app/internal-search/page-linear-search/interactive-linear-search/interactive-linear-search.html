@@ -1,0 +1,46 @@
+<section class="array-generator">
+  <!-- Apartado del tamaño de la lista -->
+  <div class="container-items-modify-search">
+    <app-param-input-linear-search
+      class="size-modify-container"
+      label="Ingrese el tamaño de la lista"
+      buttonText="Generar lista"
+      [value]="listSize()"
+      (valueChange)="listSize.set($event)"
+      (action)="activeGenerate()">
+    </app-param-input-linear-search>
+    <!--Buscar Indice-->
+    <app-param-input-linear-search
+      class="search-item-container "
+      label="Ingrese el elemento a buscar"
+      buttonText="Buscar valor"
+      [value]="findValue()"
+      (valueChange)="findValue.set($event)"
+      (action)="findNumber()">
+    </app-param-input-linear-search>
+    @if (searchPerformed()) {
+      <p class="result" [class.found]="index() !== -1" [class.not-found]="index() === -1">
+        @if (index() !== -1) {
+          El valor se encuentra en la posición <strong>{{ index() }}</strong>
+        } @else {
+          El valor no se encuentra en la lista
+        }
+      </p>
+
+    }
+  </div>
+
+  <!--Visualizer-->
+
+  @if (generated()) {
+    <app-array-visualizer
+      class="visualizer-wrapper"
+      [array]="array()"
+      (arrayChange)="updateArray($event)">
+    </app-array-visualizer>
+  } @else {
+    <div class="visualizer-wrapper">
+      <img src="assets/images/empty-list.svg" alt="Lista vacía">
+    </div>
+  }
+</section>

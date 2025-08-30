@@ -1,0 +1,40 @@
+//simular:
+.array-generator {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  //width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  gap: 1em;
+  padding: 1em; /* Posiblemente para cambiar*/
+  background-color: var(--card-bg);
+}
+
+.container-items-modify-search {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas:
+    "size-modify-container search-item-container"
+    "rest rest";
+}
+
+.size-modify-container {
+  grid-area: size-modify-container;
+}
+
+.search-item-container {
+  grid-area: search-item-container;
+}
+
+.result {
+  grid-area: rest;
+}
+
+.visualizer-wrapper {
+  grid-area: list;
+}
+
+
+

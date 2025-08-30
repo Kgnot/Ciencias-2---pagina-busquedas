@@ -1,1 +1,109 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "prismjs/themes/prism.css";
+
+:root {
+  --bg-color: #2D2D2D;
+  --card-bg: #3C3C3C;
+  --card-hover-bg: #545454;
+  --text-primary: #E0E0E0;
+  --text-secondary: #A0A0A0;
+  --border-color: #555555;
+  --accent-color: #BDBDBD;
+  --url-background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233C3C3C' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+// principal Nva
+//:root {
+//  --bg-color: #c37887;
+//  --card-bg: #9a5680;
+//  --card-hover-bg: rgb(180, 117, 156);
+//  --text-primary: #E0E0E0;
+//  --text-secondary: #f3d8a6;
+//  --border-color: #b67c9f;
+//  --accent-color: #BDBDBD;
+//  --extra-color-tacao: #eeb192;
+//  //
+//  --font-size-h1: 26px;
+//  --font-size-secondary: 18px;
+//  --url-background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23db988c' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");;
+//}
+
+//chatgpt:
+//:root {
+//  --bg-color: #1b2a41;          /* Fondo principal: azul oscuro elegante */
+//  --card-bg: #243b55;           /* Fondo de tarjeta: azul intermedio */
+//  --card-hover-bg: #3a6073;     /* Hover más claro con un toque verdoso */
+//  --text-primary: #E0F7FA;      /* Texto principal: casi blanco con azul */
+//  --text-secondary: #80DEEA;    /* Texto secundario: celeste brillante */
+//  --border-color: #4DD0E1;      /* Bordes: celeste fuerte */
+//  --accent-color: #00ACC1;      /* Acentos: azul cian */
+//  --extra-color-tacao: #26C6DA; /* Extra: celeste vibrante */
+//  --font-size-h1: 26px;
+//  --font-size-secondary: 18px;
+//  --url-background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23243b55' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+//}
+
+//chatgpt2:
+:root {
+  --bg-color: #f8f6f1; /* spring wood */
+  --card-bg: #e1eae5; /* gray nurse */
+  --card-hover-bg: #a7d7b8; /* moss green */
+  --text-primary: #4e796b; /* como */
+  --text-secondary: #66b2a0; /* tradewind */
+  --border-color: #a7d7b8; /* moss green */
+  --accent-color: #66b2a0; /* tradewind */
+  --accent-color-hover: #7ec4b3;
+  --extra-color-tacao: #4e796b; /* como, de soporte */
+
+  --font-size-h1: 26px;
+  --font-size-secondary: 18px;
+
+  --url-background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2366b2a0' fill-opacity='0.25'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  background-image: var(--url-background);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+header {
+  position: relative;
+  width: 2em;
+}
+footer{
+  position: relative;
+  height: 7em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:active,
+a:link {
+  color: inherit;
+}
+
+.default-page {
+  position: relative;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 5em;
+
+
+}

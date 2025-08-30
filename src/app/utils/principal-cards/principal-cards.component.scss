@@ -1,0 +1,26 @@
+.principal-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  padding: 1em;
+  height: 13rem;
+  transition: transform .2s ease-in-out, background-color 0.5s ease-out;
+  p {
+    color: var(--text-secondary);
+    font-size: var(--font-size-secondary);
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &:hover {
+    background-color: var(--card-hover-bg);
+    transform: scale(1.03);
+  }
+}

@@ -1,0 +1,22 @@
+.body-linear-search {
+  position: relative;
+  display: flex;
+  gap: 1em;
+
+}
+
+.bodls1 {
+  flex: 1;
+}
+
+.bodls2 {
+  flex: 1;
+}
+
+
+@media (max-width: 1100px) {
+  .body-linear-search {
+    flex-direction: column;
+  }
+
+}

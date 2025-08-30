@@ -1,0 +1,39 @@
+// demas cosas:
+.param-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.form-input {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  width: 90%;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #ffffff;
+}
+
+.btn-action {
+  padding: 0.45rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--accent-color);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--accent-color-hover);
+  }
+}
