@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {MarkdownModule} from 'ngx-markdown';
 
 @Component({

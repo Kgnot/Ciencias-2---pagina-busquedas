@@ -1,4 +1,4 @@
-import {Component, computed, signal} from '@angular/core';
+import {Component, signal} from '@angular/core';
 import {ArrayVisualizer} from '../../../utils/array-visualizer/array-visualizer';
 import {ParamInputLinearSearch} from './param-input-linear-search/param-input-linear-search';
 
