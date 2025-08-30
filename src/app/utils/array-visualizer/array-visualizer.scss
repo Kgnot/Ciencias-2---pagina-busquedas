@@ -1,61 +1,58 @@
 .array-container {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;          // se ajusta en pantallas pequeñas
-  gap: 1rem;
-  padding: 1rem;
-  background: var(--bg-color, #f8f6f1);
-  border-radius: 12px;
-  border: 1px solid var(--border-color, #e1eae5);
-  font-family: system-ui, sans-serif;
+  flex-wrap: wrap; /* Mantiene la responsividad */
+  gap: 0.5rem; /* Menos espacio entre los elementos */
+  padding: 0.75rem;
+  background: var(--bg-color, #eef1f4); /* Un fondo más oscuro para el contraste */
+  border-radius: 8px;
+  border: 1px solid var(--border-color, #d2d7dc);
 }
 
 .array-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   background: #fff;
-  border: 1px solid var(--border-color, #dfe3e6);
-  border-radius: 8px;
-  padding: 0.75rem;
-  min-width: 70px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border: 1px solid var(--border-color, #c4c4c7);
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem; /* Padding más compacto */
+  min-width: 80px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra muy sutil */
+  transition: box-shadow 0.2s;
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
 
   .index {
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--text-secondary, #4e796b);
-    margin-bottom: 0.5rem;
-    opacity: 0.8;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--text-secondary, #606060);
+    margin-right: 0.5rem;
+    opacity: 0.9;
   }
 
   input {
-    width: 60px;
-    text-align: center;
-    padding: 0.35rem 0.5rem;
-    border: 1px solid var(--border-color, #a7d7b8);
-    border-radius: 6px;
-    background: var(--input-bg, #fafafa);
-    font-size: 0.95rem;
+    width: 45px; /* Un input más estrecho */
+    text-align: right; /* Alinear a la derecha para números */
+    padding: 0.2rem 0.3rem;
+    border: 0.5px solid var(--accent-color);
+    border-radius: 4px;
+    background: transparent;
+    font-size: 0.9rem;
     outline: none;
-    transition: border-color 0.2s;
-
+    transition: background-color 0.2s;
     &:focus {
-      border-color: var(--accent-color, #66b2a0);
-      box-shadow: 0 0 0 2px rgba(102, 178, 160, 0.2);
+      background-color: var(--input-bg, #f0f0f0);
+      box-shadow: none;
     }
   }
 }
 
 .arrow {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--accent-color, #66b2a0);
   user-select: none;
-  opacity: 0.7;
+  opacity: 0.6;
 }
