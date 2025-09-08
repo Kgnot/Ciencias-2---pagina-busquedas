@@ -1,9 +1,14 @@
 //simular:
+:host{
+  display: block;
+  width: 100%;
+}
+
 .array-generator {
   position: relative;
   display: flex;
   flex-direction: column;
-  //width: 100%;
+  width: 100%;
   border-radius: 12px;
   border: 1px solid var(--border-color);
   gap: 1em;

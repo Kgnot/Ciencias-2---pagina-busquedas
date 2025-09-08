@@ -26,8 +26,12 @@ export const routes: Routes = [
     path: 'internal-search',
     component: InternalSearchPage,
     title: 'InternalSearchPage'
-  }
-  ,
+  },
+  // {
+  //   path: 'graph',
+  //   title: 'Graphs'
+  // }
+
   // rutas internas específicas
   {
     path: 'linear-search',

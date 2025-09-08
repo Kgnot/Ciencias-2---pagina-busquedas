@@ -1,18 +1,12 @@
 .body-linear-search {
   position: relative;
+  width: 100%;
   display: flex;
   gap: 1em;
+  align-items: center;
+  justify-content: center;
 
 }
-
-.bodls1 {
-  flex: 1;
-}
-
-.bodls2 {
-  flex: 1;
-}
-
 
 @media (max-width: 1100px) {
   .body-linear-search {

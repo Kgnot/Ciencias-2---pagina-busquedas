@@ -19,6 +19,8 @@ export class InteractiveLinearSearch {
   protected index = signal<number>(-1);
   protected findValue = signal<number | null>(null);
   protected searchPerformed = signal(false);
+  // to add number dynamic
+  protected newNumber = signal<number | null>(null);
 
 
   activeGenerate(): void {
@@ -53,5 +55,26 @@ export class InteractiveLinearSearch {
       }
     }
   }
+
+  // section to add number:
+  addNumber() {
+    const num = this.newNumber();
+    this.array.update(currentArray => {
+      const newArray = [...currentArray];
+      for (let i = 0; i <= newArray.length; i++) {
+        if (i === newArray.length) {
+          window.alert("No hay mas espacios en memoria")
+          break;
+        }
+        if (newArray[i] === null) {
+          newArray[i] = num;
+
+          break;
+        }
+      }
+      return newArray;
+    });
+  }
+
 
 }

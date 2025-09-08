@@ -30,6 +30,20 @@
     }
   </div>
 
+  <div>
+    <app-param-input-linear-search
+      class="search-item-container "
+      label="Ingrese el elemento a añadir"
+      buttonText="Añadir"
+      [value]="null"
+      (valueChange)="newNumber.set($event)"
+      (action)="addNumber()">
+    </app-param-input-linear-search>
+
+    <!-- Esta opcion es para  -->
+
+  </div>
+
   <!--Visualizer-->
 
   @if (generated()) {
