@@ -1,12 +1,12 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, numberAttribute, Output} from '@angular/core';
 
 @Component({
-  selector: 'app-param-input-linear-search',
+  selector: 'app-param-input-search',
   imports: [],
-  templateUrl: './param-input-linear-search.html',
-  styleUrl: './param-input-linear-search.scss'
+  templateUrl: './param-input-search.html',
+  styleUrl: './param-input-search.scss'
 })
-export class ParamInputLinearSearch {
+export class ParamInputSearch {
   @Input({required: true}) label!: string;
   @Input({required: true}) buttonText!: string;
   @Input() value: number | null = null; // valor actual

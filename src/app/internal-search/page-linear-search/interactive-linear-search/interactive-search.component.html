@@ -1,27 +1,36 @@
 <section class="array-generator">
   <!-- Apartado del tamaño de la lista -->
   <div class="container-items-modify-search">
-    <app-param-input-linear-search
+    <app-param-input-search
       class="size-modify-container"
       label="Ingrese el tamaño de la lista"
       buttonText="Generar lista"
       [value]="listSize()"
       (valueChange)="listSize.set($event)"
       (action)="activeGenerate()">
-    </app-param-input-linear-search>
+    </app-param-input-search>
+    <!--    Validar indice: -->
+    <app-param-input-search
+      class="validate-input"
+      label="Ingrese la longitud exacta de la clave"
+      buttonText="Asignar"
+      [value]="keyLength"
+      (valueChange)="keyLength = $event"
+      (action)="validateButton()">
+    </app-param-input-search>
     <!--Buscar Indice-->
-    <app-param-input-linear-search
+    <app-param-input-search
       class="search-item-container "
       label="Ingrese el elemento a buscar"
       buttonText="Buscar valor"
-      [value]="findValue()"
+      [value]="findValue() != null ? findValue() : null"
       (valueChange)="findValue.set($event)"
       (action)="findNumber()">
-    </app-param-input-linear-search>
+    </app-param-input-search>
     @if (searchPerformed()) {
       <p class="result" [class.found]="index() !== -1" [class.not-found]="index() === -1">
         @if (index() !== -1) {
-          El valor se encuentra en la posición <strong>{{ index() }}</strong>
+          El valor se encuentra en la posición <strong>{{ index() + 1 }}</strong>
         } @else {
           El valor no se encuentra en la lista
         }
@@ -31,14 +40,14 @@
   </div>
 
   <div>
-    <app-param-input-linear-search
+    <app-param-input-search
       class="search-item-container "
       label="Ingrese el elemento a añadir"
       buttonText="Añadir"
       [value]="null"
       (valueChange)="newNumber.set($event)"
       (action)="addNumber()">
-    </app-param-input-linear-search>
+    </app-param-input-search>
 
     <!-- Esta opcion es para  -->
 
@@ -49,12 +58,11 @@
   @if (generated()) {
     <app-array-visualizer
       class="visualizer-wrapper"
-      [array]="array()"
-      (arrayChange)="updateArray($event)">
+      [array]="array">
     </app-array-visualizer>
   } @else {
     <div class="visualizer-wrapper">
-      <img src="/assets/images/empty-list.webp" alt="Lista vacía">
+      <img src="/assets/images/a.webp" alt="Lista vacía">
     </div>
   }
 </section>

@@ -1,5 +1,183 @@
-<header>
-  <a href="/" class="header-a">
-    <mat-icon>home</mat-icon>
-  </a>
+<header class="main-header">
+  <div class="header-content">
+    <!-- Logo/Home -->
+    <a href="/" class="header-home">
+      <mat-icon>home</mat-icon>
+      <span>Inicio</span>
+    </a>
+
+    <!-- Navegación del Temario -->
+    <nav class="header-nav">
+      <!-- Búsquedas -->
+      <div class="nav-item dropdown">
+        <button class="nav-button"
+                (click)="toggleDropdown('busquedas')"
+                [class.active]="activeDropdown === 'busquedas'">
+          <span>Búsquedas</span>
+          <mat-icon class="dropdown-icon"
+                    [class.rotated]="activeDropdown === 'busquedas'">
+            expand_more
+          </mat-icon>
+        </button>
+
+        @if (activeDropdown === 'busquedas') {
+          <div class="dropdown-menu">
+            <!-- Búsquedas Internas -->
+            <div class="dropdown-section">
+              <div class="section-header"
+                   (click)="toggleSubDropdown('internas')"
+                   [class.active]="activeSubDropdown === 'internas'">
+                <span>Búsquedas Internas</span>
+                <mat-icon class="sub-dropdown-icon"
+                          [class.rotated]="activeSubDropdown === 'internas'">
+                  chevron_right
+                </mat-icon>
+              </div>
+
+              @if (activeSubDropdown === 'internas') {
+                <div class="sub-dropdown">
+                  <!-- Enlaces directos -->
+                  <a href="/linear-search" class="dropdown-link final-link">
+                    <mat-icon>search</mat-icon>
+                    Búsqueda Lineal
+                  </a>
+
+                  <a href="/binary-search" class="dropdown-link final-link">
+                    <mat-icon>search</mat-icon>
+                    Búsqueda Binaria
+                  </a>
+
+                  <!-- Por transformación de claves -->
+                  <div class="sub-section">
+                    <div class="sub-section-header"
+                         (click)="toggleSubSubDropdown('transformacion')"
+                         [class.active]="activeSubSubDropdown === 'transformacion'">
+                      <span>Por transformación de claves</span>
+                      <mat-icon class="sub-sub-dropdown-icon"
+                                [class.rotated]="activeSubSubDropdown === 'transformacion'">
+                        chevron_right
+                      </mat-icon>
+                    </div>
+
+                    @if (activeSubSubDropdown === 'transformacion') {
+                      <div class="sub-sub-dropdown">
+                        <a href="/funcion-hash" class="dropdown-link final-link deep">
+                          <mat-icon>tag</mat-icon>
+                          Función Hash
+                        </a>
+                        <a href="/funcion-modulo" class="dropdown-link final-link deep">
+                          <mat-icon>tag</mat-icon>
+                          Función Módulo
+                        </a>
+                        <a href="/funcion-cuadrado" class="dropdown-link final-link deep">
+                          <mat-icon>tag</mat-icon>
+                          Función Cuadrado
+                        </a>
+                        <a href="/funcion-truncamiento" class="dropdown-link final-link deep">
+                          <mat-icon>tag</mat-icon>
+                          Función Truncamiento
+                        </a>
+                        <a href="/funcion-plegamiento" class="dropdown-link final-link deep">
+                          <mat-icon>tag</mat-icon>
+                          Función Plegamiento
+                        </a>
+                      </div>
+                    }
+                  </div>
+
+                  <!-- Búsqueda por residuos -->
+                  <div class="sub-section">
+                    <div class="sub-section-header"
+                         (click)="toggleSubSubDropdown('residuos')"
+                         [class.active]="activeSubSubDropdown === 'residuos'">
+                      <span>Búsqueda por residuos</span>
+                      <mat-icon class="sub-sub-dropdown-icon"
+                                [class.rotated]="activeSubSubDropdown === 'residuos'">
+                        chevron_right
+                      </mat-icon>
+                    </div>
+
+                    @if (activeSubSubDropdown === 'residuos') {
+                      <div class="sub-sub-dropdown">
+                        <a href="/arboles-busqueda-digital" class="dropdown-link final-link deep">
+                          <mat-icon>account_tree</mat-icon>
+                          Árboles de búsqueda digital
+                        </a>
+                        <a href="/tries-busqueda-residuos" class="dropdown-link final-link deep">
+                          <mat-icon>account_tree</mat-icon>
+                          Tries de búsqueda por residuos
+                        </a>
+                        <a href="/busqueda-residuos-multiples" class="dropdown-link final-link deep">
+                          <mat-icon>account_tree</mat-icon>
+                          Búsqueda por residuos múltiples
+                        </a>
+                        <a href="/arboles-huffman" class="dropdown-link final-link deep">
+                          <mat-icon>account_tree</mat-icon>
+                          Árboles de Huffman
+                        </a>
+                      </div>
+                    }
+                  </div>
+
+                  <!-- Búsqueda por rangos -->
+                  <div class="sub-section">
+                    <div class="sub-section-header"
+                         (click)="toggleSubSubDropdown('rangos')"
+                         [class.active]="activeSubSubDropdown === 'rangos'">
+                      <span>Búsqueda por rangos</span>
+                      <mat-icon class="sub-sub-dropdown-icon"
+                                [class.rotated]="activeSubSubDropdown === 'rangos'">
+                        chevron_right
+                      </mat-icon>
+                    </div>
+
+                    @if (activeSubSubDropdown === 'rangos') {
+                      <div class="sub-sub-dropdown">
+                        <a href="/metodo-rejilla" class="dropdown-link final-link deep">
+                          <mat-icon>grid_on</mat-icon>
+                          Método de la rejilla
+                        </a>
+                        <a href="/arboles-2d-kd" class="dropdown-link final-link deep">
+                          <mat-icon>grid_on</mat-icon>
+                          Árboles 2D (KD)
+                        </a>
+                        <a href="/metodos-elementales" class="dropdown-link final-link deep">
+                          <mat-icon>grid_on</mat-icon>
+                          Métodos elementales
+                        </a>
+                      </div>
+                    }
+                  </div>
+
+                </div>
+              }
+            </div>
+
+            <!-- Búsquedas Externas -->
+            <a href="/busquedas-externas" class="dropdown-link final-link">
+              <mat-icon>cloud_download</mat-icon>
+              Búsquedas Externas
+            </a>
+
+          </div>
+        }
+      </div>
+
+      <!-- Grafos -->
+      <div class="nav-item">
+        <a href="/grafos" class="nav-button final-link">
+          <span>Grafos</span>
+          <mat-icon>hub</mat-icon>
+        </a>
+      </div>
+
+    </nav>
+  </div>
 </header>
+
+<!-- Overlay para cerrar dropdowns -->
+@if (activeDropdown) {
+  <div class="dropdown-overlay"
+       (click)="closeAllDropdowns()">
+  </div>
+}

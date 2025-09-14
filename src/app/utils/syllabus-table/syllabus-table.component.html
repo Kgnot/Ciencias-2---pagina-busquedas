@@ -1,0 +1,26 @@
+<h2 class="syllabus-title">{{ title }}</h2>
+
+<table mat-table [dataSource]="visibleData()" class="syllabus-table mat-elevation-z8">
+
+  <!-- Columna de label -->
+  <ng-container matColumnDef="label">
+    <th mat-header-cell *matHeaderCellDef> Temario</th>
+    <td mat-cell *matCellDef="let element">
+      <div class="syllabus-cell" [style.padding-left]="getPadding(element.level)">
+        @if (element.children?.length) {
+          <button
+            class="syllabus-toggle-button"
+            (click)="toggle(element)">
+            <mat-icon>
+              {{ element.expanded ? 'expand_less' : 'expand_more' }}
+            </mat-icon>
+          </button>
+        }
+        <span class="syllabus-label">{{ element.label }}</span>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay" class="syllabus-row"></tr>
+</table>
