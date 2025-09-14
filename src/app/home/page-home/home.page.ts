@@ -3,6 +3,7 @@ import {ListPrincipalCardsComponent} from '../../utils/list-principal-cards/list
 import {PrincipalCardsComponent} from '../../utils/principal-cards/principal-cards.component';
 import {TitlePageComponent} from '../../utils/title-page/title-page.component';
 import {InputSearchComponent} from '../input-search/input-search.component';
+import {GraphComponent} from '../../utils/graph/graph.component';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,8 @@ import {InputSearchComponent} from '../input-search/input-search.component';
     ListPrincipalCardsComponent,
     PrincipalCardsComponent,
     TitlePageComponent,
-    InputSearchComponent
+    InputSearchComponent,
+    GraphComponent
   ],
   templateUrl: './home.page.html',
   styleUrl: './home.page.scss'
