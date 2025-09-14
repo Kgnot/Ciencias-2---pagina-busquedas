@@ -1,11 +1,10 @@
 <div class="array-container">
   @for (item of array; track $index) {
     <div class="array-item">
-      <label class="index">{{ $index }}</label>
-      <input
-        type="number"
-        [value]="displayValue(item)"
-        (input)="onInput($event, $index)" />
+      <label class="index">{{ $index +1}}</label>
+      <div
+        type="number"></div>
+      {{ item }}
     </div>
     @if ($index < array.length - 1) {
       <div class="arrow">→</div>

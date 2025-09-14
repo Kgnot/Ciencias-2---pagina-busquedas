@@ -1,5 +1,5 @@
 //simular:
-:host{
+:host {
   display: block;
   width: 100%;
 }
@@ -14,16 +14,17 @@
   gap: 1em;
   padding: 1em; /* Posiblemente para cambiar*/
   background-color: var(--card-bg);
+  color: white;
   min-height: 30em;
 }
 
 .container-items-modify-search {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 2fr 1fr;
   grid-template-areas:
-    "size-modify-container search-item-container"
-    "rest rest";
+    "size-modify-container validate-input-container  search-item-container "
+    "rest rest rest";
 }
 
 .size-modify-container {
@@ -34,6 +35,10 @@
   grid-area: search-item-container;
 }
 
+.validate-input {
+  grid-area: validate-input-container;
+}
+
 .result {
   grid-area: rest;
 }
@@ -41,7 +46,8 @@
 .visualizer-wrapper {
   grid-area: list;
   max-width: 100%;
-  img{
+
+  img {
     width: 100%;
     object-fit: cover;
   }

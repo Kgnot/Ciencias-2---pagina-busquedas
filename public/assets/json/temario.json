@@ -1,0 +1,66 @@
+{
+  "id": "root",
+  "label": "Temario",
+  "level": 0,
+  "children": [
+    {
+      "id": "busquedas",
+      "label": "Búsquedas",
+      "level": 0,
+      "children": [
+        {
+          "id": "internas",
+          "label": "Búsquedas Internas",
+          "level": 1,
+          "children": [
+            { "id": "lineal", "label": "Búsqueda Lineal", "level": 2 },
+            { "id": "binaria", "label": "Búsqueda Binaria", "level": 2 },
+            {
+              "id": "transformacion",
+              "label": "Por transformación de claves",
+              "level": 2,
+              "children": [
+                { "id": "hash", "label": "Función Hash", "level": 3 },
+                { "id": "modulo", "label": "Función Módulo", "level": 3 },
+                { "id": "cuadrado", "label": "Función Cuadrado", "level": 3 },
+                { "id": "truncamiento", "label": "Función Truncamiento", "level": 3 },
+                { "id": "plegamiento", "label": "Función Plegamiento", "level": 3 }
+              ]
+            },
+            {
+              "id": "residuos",
+              "label": "Búsqueda por residuos",
+              "level": 2,
+              "children": [
+                { "id": "digital", "label": "Árboles de búsqueda digital", "level": 3 },
+                { "id": "tries", "label": "Tries de búsqueda por residuos", "level": 3 },
+                { "id": "residuos-multiples", "label": "Búsqueda por residuos múltiples", "level": 3 },
+                { "id": "huffman", "label": "Árboles de Huffman", "level": 3 }
+              ]
+            },
+            {
+              "id": "rangos",
+              "label": "Búsqueda por rangos",
+              "level": 2,
+              "children": [
+                { "id": "rejilla", "label": "Método de la rejilla", "level": 3 },
+                { "id": "kd", "label": "Árboles 2D (KD)", "level": 3 },
+                { "id": "elementales", "label": "Métodos elementales", "level": 3 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "externas",
+          "label": "Búsquedas Externas",
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "grafos",
+      "label": "Grafos",
+      "level": 0
+    }
+  ]
+}
