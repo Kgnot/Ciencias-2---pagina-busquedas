@@ -1,0 +1,138 @@
+<section class="function-hash-module">
+  <app-title-page
+    title="Transformación de clases - Truncamiento"
+    description="También conocidos como métodos hash"
+  />
+  <app-dropdown-collission/>
+
+  <div class="card-definition-body">
+
+    <!-- Sección de controles -->
+    <div class="hash-controls">
+      <h3>Configuración de la Tabla Hash</h3>
+
+      <!-- Control para tamaño de tabla -->
+      <app-param-input-search
+        label="Tamaño de la tabla (número de posiciones)"
+        buttonText="Crear Tabla"
+        [value]="tableSize"
+        (valueChange)="onTableSizeChange($event)"
+        (action)="createTable()">
+      </app-param-input-search>
+
+      <!-- NUEVO: Control para longitud de claves -->
+      <app-param-input-search
+        label="Longitud deseada de las claves"
+        buttonText="Aplicar"
+        [value]="keyLength"
+        (valueChange)="onKeyLengthChange($event)"
+        (action)="updateKeyLength()">
+      </app-param-input-search>
+
+      <!-- NUEVO: Control para posiciones a usar -->
+      <app-param-input-search-string
+        label="Posiciones a usar para el hash (ej: 2,3 o 1,4)"
+        buttonText="Configurar"
+        [value]="positionsToUse"
+        (valueChange)="onPositionsChange($event)"
+        (action)="updatePositions()">
+      </app-param-input-search-string>
+
+      <!-- Control para agregar clave -->
+      <app-param-input-search
+        label="Clave a agregar"
+        buttonText="Agregar"
+        [value]="keyToAdd"
+        (valueChange)="onKeyToAddChange($event)"
+        (action)="addKey()">
+      </app-param-input-search>
+
+      <!-- Control para buscar clave -->
+      <app-param-input-search
+        label="Clave a buscar"
+        buttonText="Buscar"
+        [value]="keyToSearch"
+        (valueChange)="onKeyToSearchChange($event)"
+        (action)="searchKey()">
+      </app-param-input-search>
+
+      <!-- Botones adicionales -->
+      <div class="additional-controls">
+        <button class="btn-clear" (click)="clearTable()" [disabled]="!hashTable.length">
+          Limpiar Tabla
+        </button>
+      </div>
+    </div>
+
+    <!-- Visualización de la estructura hash -->
+    @if (hashTable.length > 0) {
+      <div class="hash-visualization">
+        <h3>Estructura de la Tabla Hash</h3>
+
+        <!-- Configuración actual -->
+        <div class="hash-function">
+          <p><strong>Método:</strong> Truncamiento</p>
+          <p><strong>Longitud de claves:</strong> {{ keyLength || 'No definida' }}</p>
+          <p><strong>Posiciones usadas:</strong> {{ displayPositions() }}</p>
+        </div>
+
+        <!-- Tabla hash -->
+        <div class="hash-table">
+          <div class="table-header">
+            <div class="col-index">Índice</div>
+            <div class="col-key">Clave</div>
+            <div class="col-status">Estado</div>
+            <div class="col-actions">Acciones</div>
+          </div>
+
+          @for (entry of hashTable; track $index) {
+            <div
+              class="table-row"
+              [class.occupied]="entry.status === 'occupied'"
+              [class.empty]="entry.status === 'empty'"
+              [class.deleted]="entry.status === 'deleted'">
+
+              <div class="col-index">{{ $index }}</div>
+              <div class="col-key">
+                @if (entry.status === 'occupied') {
+                  <span>{{ entry.key }}</span>
+                } @else if (entry.status === 'empty') {
+                  <span class="empty-text">--</span>
+                } @else {
+                  <span class="deleted-text">ELIMINADO</span>
+                }
+              </div>
+              <div class="col-status">
+                <span class="status-badge" [class]="entry.status">
+                  {{
+                    entry.status === 'occupied' ? 'OCUPADO' :
+                      entry.status === 'empty' ? 'VACÍO' : 'ELIMINADO'
+                  }}
+                </span>
+              </div>
+              <div class="col-actions">
+                @if (entry.status === 'occupied') {
+                  <button class="btn-delete" (click)="deleteKey($index)">
+                    Eliminar
+                  </button>
+                }
+              </div>
+            </div>
+          }
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="hash-stats">
+          <div class="stat-item">
+            <span class="stat-label">Total posiciones:</span>
+            <span class="stat-value">{{ hashTable.length }}</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Posiciones ocupadas:</span>
+            <span class="stat-value">{{ occupiedCount }}</span>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

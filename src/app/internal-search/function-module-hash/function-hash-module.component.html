@@ -1,0 +1,139 @@
+<section class="function-hash-module">
+  <app-title-page
+    title="Función Hash"
+    description="Modulo"
+  />
+  <app-dropdown-collission />
+
+  <div class="card-definition-body">
+
+    <!-- Sección de controles -->
+    <div class="hash-controls">
+      <h3>Configuración de la Tabla Hash</h3>
+
+      <!-- Control para tamaño de tabla -->
+      <app-param-input-search
+        label="Tamaño de la tabla (número de posiciones)"
+        buttonText="Crear Tabla"
+        [value]="tableSize"
+        (valueChange)="onTableSizeChange($event)"
+        (action)="createTable()">
+      </app-param-input-search>
+
+      <!-- Control para agregar clave -->
+      <app-param-input-search
+        label="Clave a agregar"
+        buttonText="Agregar"
+        [value]="keyToAdd"
+        (valueChange)="onKeyToAddChange($event)"
+        (action)="addKey()">
+      </app-param-input-search>
+
+      <!-- Control para buscar clave -->
+      <app-param-input-search
+        label="Clave a buscar"
+        buttonText="Buscar"
+        [value]="keyToSearch"
+        (valueChange)="onKeyToSearchChange($event)"
+        (action)="searchKey()">
+      </app-param-input-search>
+
+      <!-- Botones adicionales -->
+      <div class="additional-controls">
+        <button class="btn-clear" (click)="clearTable()" [disabled]="!hashTable.length">
+          Limpiar Tabla
+        </button>
+      </div>
+    </div>
+
+<!--    &lt;!&ndash; Mensajes de estado &ndash;&gt;-->
+<!--    @if (message || searchResult) {-->
+<!--      <div class="status-messages">-->
+<!--        @if (message) {-->
+<!--          <div class="message">-->
+<!--            <span class="message-icon">ℹ️</span>-->
+<!--            {{ message }}-->
+<!--          </div>-->
+<!--        }-->
+<!--        @if (searchResult) {-->
+<!--          <div class="search-result"-->
+<!--               [class.found]="searchResult.includes('✓')"-->
+<!--               [class.not-found]="searchResult.includes('✗')">-->
+<!--            {{ searchResult }}-->
+<!--          </div>-->
+<!--        }-->
+<!--      </div>-->
+<!--    }-->
+
+    <!-- Visualización de la estructura hash -->
+    @if (hashTable.length > 0) {
+      <div class="hash-visualization">
+        <h3>Estructura de la Tabla Hash</h3>
+
+        <!-- Función hash -->
+        <div class="hash-function">
+          <p><strong>Función Hash:</strong> h(k) = k mod {{ tableSize }}</p>
+        </div>
+
+        <!-- Tabla hash -->
+        <div class="hash-table">
+          <div class="table-header">
+            <div class="col-index">Índice</div>
+            <div class="col-key">Clave</div>
+            <div class="col-status">Estado</div>
+            <div class="col-actions">Acciones</div>
+          </div>
+
+          @for (entry of hashTable; track $index) {
+            <div
+              class="table-row"
+              [class.occupied]="entry.status === 'occupied'"
+              [class.empty]="entry.status === 'empty'"
+              [class.deleted]="entry.status === 'deleted'">
+
+              <div class="col-index">{{ $index }}</div>
+              <div class="col-key">
+                @if (entry.status === 'occupied') {
+                  <span>{{ entry.key }}</span>
+                } @else if (entry.status === 'empty') {
+                  <span class="empty-text">--</span>
+                } @else {
+                  <span class="deleted-text">ELIMINADO</span>
+                }
+              </div>
+              <div class="col-status">
+                <span class="status-badge" [class]="entry.status">
+                  {{ entry.status === 'occupied' ? 'OCUPADO' :
+                  entry.status === 'empty' ? 'VACÍO' : 'ELIMINADO' }}
+                </span>
+              </div>
+              <div class="col-actions">
+                @if (entry.status === 'occupied') {
+                  <button class="btn-delete" (click)="deleteKey($index)">
+                    Eliminar
+                  </button>
+                }
+              </div>
+            </div>
+          }
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="hash-stats">
+          <div class="stat-item">
+            <span class="stat-label">Total posiciones:</span>
+            <span class="stat-value">{{ hashTable.length }}</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Posiciones ocupadas:</span>
+            <span class="stat-value">{{ occupiedCount }}</span>
+          </div>
+<!--          <div class="stat-item">-->
+<!--            <span class="stat-label">Factor de carga:</span>-->
+<!--            <span class="stat-value">{{ loadFactor }}</span>-->
+<!--          </div>-->
+        </div>
+      </div>
+    }
+  </div>
+</section>

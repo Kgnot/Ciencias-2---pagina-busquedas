@@ -1,0 +1,37 @@
+<!-- Dropdown de soluciones de colisiones -->
+<div class="nav-item dropdown">
+
+  <button class="nav-button"
+          (click)="toggleDropdown('colisiones')"
+          [class.active]="activeDropdown === 'colisiones'">
+    <span>Soluciones de Colisiones</span>
+    <mat-icon class="dropdown-icon"
+              [class.rotated]="activeDropdown === 'colisiones'">
+      expand_more
+    </mat-icon>
+  </button>
+
+  @if (activeDropdown === 'colisiones') {
+    <div class="dropdown-menu">
+
+      <!-- Lineal -->
+      <a class="dropdown-link final-link">
+        <mat-icon>drag_handle</mat-icon>
+        Lineal
+      </a>
+
+      <!-- Cuadrática -->
+      <a class="dropdown-link final-link">
+        <mat-icon>crop_square</mat-icon>
+        Cuadrática
+      </a>
+
+      <!-- Doble dirección -->
+      <a class="dropdown-link final-link">
+        <mat-icon>call_split</mat-icon>
+        Doble Dirección (Double Hash)
+      </a>
+
+    </div>
+  }
+</div>

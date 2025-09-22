@@ -10,12 +10,11 @@
   flex-direction: column;
   width: 100%;
   border-radius: 12px;
-  border: 1px solid var(--border-color);
   gap: 1em;
   padding: 1em; /* Posiblemente para cambiar*/
-  background-color: var(--card-bg);
-  color: white;
+  color: #2d3748;
   min-height: 30em;
+  box-sizing: border-box;
 }
 
 .container-items-modify-search {

@@ -1,7 +1,6 @@
 import {Component, inject, Input, signal} from '@angular/core';
-import {ArrayVisualizer} from '../../../utils/array-visualizer/array-visualizer';
-import {ParamInputSearch} from './param-input-search/param-input-search';
-import {LinearSearchService} from '../../../service/linear-search.service';
+import {ArrayVisualizer} from '../array-visualizer/array-visualizer';
+import {ParamInputSearch} from '../param-input-search/param-input-search';
 
 @Component({
   selector: 'app-interactive-search',

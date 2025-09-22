@@ -4,7 +4,7 @@
   flex-wrap: wrap; /* Mantiene la responsividad */
   gap: 0.5rem; /* Menos espacio entre los elementos */
   padding: 0.75rem;
-  background: var(--bg-color, #eef1f4); /* Un fondo más oscuro para el contraste */
+  background: #eef1f4; /* Un fondo más oscuro para el contraste */
   border-radius: 8px;
   border: 1px solid var(--border-color, #d2d7dc);
 }
