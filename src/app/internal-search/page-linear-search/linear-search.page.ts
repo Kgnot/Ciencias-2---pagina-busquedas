@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {TitlePageComponent} from '../../utils/title-page/title-page.component';
-import {InteractiveSearch} from './interactive-linear-search/interactive-search.component';
+import {InteractiveSearch} from '../../utils/interactive-linear-search/interactive-search.component';
 import {LinearSearchService} from '../../service/linear-search.service';
 
 @Component({

@@ -1,5 +1,4 @@
 export * from './page-binary-search/binary-search.page'
-export * from './page-class-transformation-search/class-transformation-search.page'
 export * from './_principal-page-internal-search/internal-search.page'
 export * from './page-linear-search/linear-search.page'
 export * from './page-range-search/range-search.page'
